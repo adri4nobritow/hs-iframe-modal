@@ -1,11 +1,11 @@
 {
   "type": "crm-card",
   "data": {
-    "title": "Displaying iframe modal",
+    "title": "CMS OrgID",
     "location": "crm.record.tab",
     "module": {
       "file": "DisplayIframe.jsx"
     },
-    "objectTypes": [{ "name": "contacts" }]
+    "objectTypes": [{ "name": "tickets" }]
   }
 }
