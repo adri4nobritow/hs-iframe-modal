@@ -1,0 +1,21 @@
+{
+  "name": "cms-iframe",
+  "version": "0.1.0",
+  "description": "iFrame to display OrgID page from Jeeves CMS directly in HubSpot",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd ./src/app/extensions/ && npm install",
+    "build": "npm run build --prefix ./src/app/extensions/",
+    "dev": "npm run dev --prefix ./src/app/extensions/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HubSpot/ui-extensions-react-examples.git"
+  },
+  "author": "Adriano Brito",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HubSpot/ui-extensions-react-examples/issues"
+  },
+  "homepage": "https://github.com/HubSpot/ui-extensions-react-examples#readme"
+}
