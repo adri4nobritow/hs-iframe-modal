@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HubSpot/ui-extensions-react-examples.git"
+    "url": "git+https://github.com/adri4nobritow/hs-iframe-modal"
   },
   "author": "Adriano Brito",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HubSpot/ui-extensions-react-examples/issues"
+    "url": "https://github.com/adri4nobritow/hs-iframe-modal"
   },
-  "homepage": "https://github.com/HubSpot/ui-extensions-react-examples#readme"
+  "homepage": "https://github.com/adri4nobritow/hs-iframe-modal"
 }
