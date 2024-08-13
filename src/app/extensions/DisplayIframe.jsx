@@ -21,7 +21,7 @@ const CmsOrgIdComponent = ({ fetchProperties, actions }) => {
   const handleClick = () => {
     if (cmsOrgId) {
       actions.openIframeModal({
-        uri: `https://www.example.com`,
+        uri: `https://admin.prod.jeeves.vpn/admin/organizations/11951`,
         height: 1000,
         width: 1000,
       });
