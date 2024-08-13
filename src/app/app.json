@@ -1,7 +1,7 @@
 {
   "name": "CMS iframe modal",
   "description": "CMS iframe to display matched CMS OrgID",
-  "scopes": ["crm.objects.tickets.read", "crm.objects.tickets.write"],
+  "scopes": ["tickets"],
   "uid": "display-iframe-modal",
   "public": false,
   "extensions": {

@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/adri4nobritow/hs-iframe-modal"
   },
-  "homepage": "https://github.com/adri4nobritow/hs-iframe-modal"
+  "homepage": "https://github.com/adri4nobritow/hs-iframe-modal",
+  "dependencies": {
+    "@hubspot/ui-extensions": "^0.8.29"
+  }
 }

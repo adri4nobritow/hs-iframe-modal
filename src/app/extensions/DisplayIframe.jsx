@@ -1,38 +1,42 @@
-import { hubspot, Button, Flex } from "@hubspot/ui-extensions";
+import { hubspot, Button, Flex, Text } from "@hubspot/ui-extensions";
+import { useState, useEffect } from "react";
 
 // Define the extension to be run within the HubSpot CRM
-hubspot.extend(({ crm, actions }) => {
-  // Fetch the ticket properties, including 'cms_org_id'
-  crm.fetch('ticket').then(ticket => {
-    const cmsOrgId = ticket.properties['cms_org_id']; // Get the 'cms_org_id' property
+hubspot.extend(({ actions }) => (
+  <CmsOrgIdComponent fetchProperties={actions.fetchCrmObjectProperties} actions={actions} />
+));
 
-    // If the property exists, open the iframe with the dynamic URL
+const CmsOrgIdComponent = ({ fetchProperties, actions }) => {
+  const [cmsOrgId, setCmsOrgId] = useState("");
+
+  useEffect(() => {
+    // Fetch the 'cms_org_id' property from the ticket
+    fetchProperties(["cms_org_id"]).then(properties => {
+      setCmsOrgId(properties.cms_org_id);
+    }).catch(error => {
+      console.error("Error fetching CMS Org ID:", error);
+    });
+  }, [fetchProperties]);
+
+  const handleClick = () => {
     if (cmsOrgId) {
-      const handleClick = () => {
-        actions.openIframeModal({
-          uri: `https://admin.prod.jeeves.vpn/admin/organizations/${cmsOrgId}`,
-          height: 1000,
-          width: 1000,
-        });
-      };
-
-      // Render the button that triggers the modal
-      return (
-        <Flex direction="column" align="start" gap="medium">
-          <Button type="submit" onClick={handleClick}>
-            Open Organization Admin
-          </Button>
-        </Flex>
-      );
-    } else {
-      // Handle case where 'cms_org_id' is not available
-      return (
-        <Flex direction="column" align="start" gap="medium">
-          <Button type="submit" disabled>
-            cms_org_id not found
-          </Button>
-        </Flex>
-      );
+      actions.openIframeModal({
+        uri: `https://www.example.com`,
+        height: 1000,
+        width: 1000,
+      });
     }
-  });
-});
+  };
+
+  return (
+    <Flex direction="column" align="start" gap="medium">
+      {cmsOrgId ? (
+        <Button type="submit" onClick={handleClick}>
+          Open Example.com
+        </Button>
+      ) : (
+        <Text>CMS Org ID not found or loading...</Text>
+      )}
+    </Flex>
+  );
+};
